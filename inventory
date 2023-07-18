@@ -1,0 +1,5 @@
+[panda]
+192.168.10.61 if_name=ens160
+
+[diana]
+192.168.10.62 if_name=ens160

@@ -1,0 +1,11 @@
+---
+# tasks file for gerencia_rotas
+- name: Adiciona rotas estáticas
+  community.general.nmcli:
+    conn_name: "{{ v_if_name }}"
+    routes4:
+      '{{ v_rota }}'
+    type: ethernet
+    state: present
+  notify:
+    - Reload rotas

@@ -1,0 +1,17 @@
+- hosts: all
+  gather_facts: false
+  become: yes
+  tasks:
+    - name: Lista das rotas ambiente Panda
+      ansible.builtin.include_vars:
+        file: rotas_panda.yaml
+      when: "'panda' in group_names"
+
+    - name: Lista das rotas ambiente D.I.A.N.A
+      ansible.builtin.include_vars:
+        file: rotas_diana.yaml
+      when: "'diana' in group_names"
+
+
+    - ansible.builtin.include_role:
+        name: gerencia_rotas
